@@ -31,6 +31,11 @@
         @include('layouts._footer')
     </div>
 
+    <!-- 用户切换工具 sudo-su 植入 -->
+    @if (app()->isLocal())
+        @include('sudosu::user-selector')
+    @endif
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts')
