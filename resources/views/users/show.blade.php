@@ -13,7 +13,17 @@
                     <div align="center">
                         <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="300px" height="300px">
                     </div>
+                    
+                    {{-- 关注 取消关注 --}}
+                    @if (Auth::check())
+                        @include('users._follow_form')
+                    @endif
+
                     <div class="media-body">
+                        <hr>
+                        <section class="stats">
+                            @include('users._stats', ['user' => Auth::user()])
+                        </section>
                         <hr>
                         <h4><strong>个人简介</strong></h4>
                         <p>{{ $user->introduction }}</p>
