@@ -21,6 +21,9 @@ class User extends Authenticatable
     // 活跃用户
     use Traits\ActiveUserHelper;
 
+    // 引用用户最后登录时间
+    use Traits\LastActivedAtHelper;
+
     public function notify($instance)
     {
         // 如果要通知的人是当前用户，就不必通知了！
