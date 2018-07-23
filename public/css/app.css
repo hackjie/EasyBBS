@@ -9106,3 +9106,14 @@ body {
   margin-top: 25px;
 }
 
+/* commit */
+
+.reply-content a {
+  color: #f08779;
+}
+
+.reply-content a:hover {
+  text-decoration: none;
+  color: #c46b61;
+}
+

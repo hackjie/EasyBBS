@@ -19,7 +19,7 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
     $now = Carbon::now()->toDateTimeString();
 
     return [
-        'name' => $faker->name,
+        'name' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),

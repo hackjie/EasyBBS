@@ -300,3 +300,14 @@ body {
     margin-top: 25px;
 }
 
+/* commit */
+.reply-content {
+    a {
+        color: #f08779;
+        &:hover {
+            text-decoration: none;
+            color: #c46b61;
+        }
+    }
+}
+
