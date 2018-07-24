@@ -9112,6 +9112,11 @@ body {
   color: #f08779;
 }
 
+.reply-content a:link {
+  text-decoration: underline;
+  color: #f08779;
+}
+
 .reply-content a:hover {
   text-decoration: none;
   color: #c46b61;

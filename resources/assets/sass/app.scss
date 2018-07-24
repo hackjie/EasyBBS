@@ -304,6 +304,10 @@ body {
 .reply-content {
     a {
         color: #f08779;
+        &:link {
+            text-decoration: underline;
+            color: #f08779;
+        }
         &:hover {
             text-decoration: none;
             color: #c46b61;
