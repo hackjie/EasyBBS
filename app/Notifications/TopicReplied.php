@@ -14,11 +14,13 @@ class TopicReplied extends Notification
     use Queueable;
 
     public $reply;
+    public $type;
 
-    public function __construct(Reply $reply)
+    public function __construct(Reply $reply, $type)
     {
         // 注入回复实体，方便 toDatabase 方法中的使用
         $this->reply = $reply;
+        $this->type = $type;
     }
 
     public function via($notifiable)
@@ -34,7 +36,7 @@ class TopicReplied extends Notification
 
         // 存入数据库里的数据
         return [
-            'type' => 'reply',
+            'type' => $this->type,
             'reply_id' => $this->reply->id,
             'reply_content' => $this->reply->content,
             'user_id' => $this->reply->user->id,

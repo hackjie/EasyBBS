@@ -8,10 +8,17 @@
     <div class="infos">
         <div class="media-heading">
             <a href="{{ route('users.show', $notification->data['user_id']) }}">{{ $notification->data['user_name'] }}</a>
-            评论了
-            <a href="{{ $notification->data['topic_link'] }}">{{ $notification->data['topic_title'] }}</a>
 
-            {{-- 回复删除按钮 --}}
+            {{-- 通知分为话题被评论；话题评论中被提及 --}}
+            @if ($notification->data['type'] == 'reply')
+            •回复了你的话题：
+            <a href="{{ $notification->data['topic_link'] }}">{{ $notification->data['topic_title'] }}</a>
+            @else
+            •在
+            <a href="{{ $notification->data['topic_link'] }}">{{ $notification->data['topic_title'] }}</a>
+              的评论中提及到了你
+            @endif
+
             <span class="meta pull-right" title="{{ $notification->created_at }}">
                 <span class="glyphicon glyphicon-clock" aria-hidden="true"></span>
                 {{ $notification->created_at->diffForHumans() }}
