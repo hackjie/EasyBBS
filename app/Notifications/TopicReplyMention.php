@@ -8,8 +8,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use App\Models\Reply;
 
-// 通知话题拥有者
-class TopicReplied extends Notification
+// 评论提及 @ 到的人通知
+class TopicReplyMention extends Notification
 {
     use Queueable;
 
@@ -32,9 +32,9 @@ class TopicReplied extends Notification
         $topic = $this->reply->topic;
         $link =  $topic->link(['#reply' . $this->reply->id]);
 
-        // 存入数据库里的数据
+        // 存入数据库里的数据 给 data 字段
         return [
-            'type' => 'reply',
+            'type' => 'mention',
             'reply_id' => $this->reply->id,
             'reply_content' => $this->reply->content,
             'user_id' => $this->reply->user->id,

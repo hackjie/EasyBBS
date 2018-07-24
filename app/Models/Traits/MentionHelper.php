@@ -12,9 +12,9 @@ trait MentionHelper
     public $usernames;
     public $body_original;
 
-    public function getMentionedUsername()
+    public function getMentionedUsername($content)
     {
-        preg_match_all("/(\S*)\@([^\r\n\s]*)/i", $this->body_original, $atlist_tmp);
+        preg_match_all("/(\S*)\@([^\r\n\s]*)/i", $content, $atlist_tmp);
         $usernames = [];
         foreach ($atlist_tmp[2] as $k=>$v) {
             if ($atlist_tmp[1][$k] || strlen($v) >25) {
@@ -48,11 +48,24 @@ trait MentionHelper
     public function parse($body)
     {
         $this->body_original = $body;
-        $this->usernames = $this->getMentionedUsername();
+        $this->usernames = $this->getMentionedUsername($this->body_original);
 
         count($this->usernames) > 0 && $this->users = User::whereIn('name', $this->usernames)->get();
 
         $this->replace();
         return $this->body_parsed;
+    }
+
+    public function mentionUserIds()
+    {
+        $ids = '';
+        foreach ($this->users as $user) {
+            if (empty($ids)) {
+                $ids = $user->id;
+            } else {
+                $ids = $ids.','.$user->id;
+            }
+        }
+        return $ids;
     }
 }
