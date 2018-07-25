@@ -8464,10 +8464,6 @@ body {
   color: #b3b3b3;
 }
 
-.home-feed-group .pagination {
-  margin: 12px 0;
-}
-
 .footer {
   position: absolute;
   bottom: 0;
@@ -9036,6 +9032,10 @@ body {
   content: normal;
 }
 
+.category-description {
+  background-color: #fff;
+}
+
 .topics-show-page .panel {
   padding: 15px;
 }
@@ -9072,6 +9072,14 @@ body {
 
 .notifications-badge .badge-hint {
   background-color: #d15b47 !important;
+}
+
+.notification-list a {
+  color: #444444;
+}
+
+.notification-list a:hover {
+  text-decoration: underline;
 }
 
 /* Sidebar */

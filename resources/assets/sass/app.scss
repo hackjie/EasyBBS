@@ -218,6 +218,10 @@ body {
 
 @import "topic_body";
 
+.category-description {
+    background-color: #fff;
+}
+
 .topics-show-page {
 
     .panel {
@@ -258,6 +262,15 @@ body {
 
     .badge-hint {
         background-color: #d15b47 !important;;
+    }
+}
+
+.notification-list {
+    a {
+        color: #444444;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

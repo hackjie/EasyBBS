@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('images/catCouple.png') }}" class="header-icon" alt="caticon" style="display: inline-block;" />
+                <img src="{{ asset('images/catPaw.png') }}" class="header-icon" alt="caticon" style="display: inline-block;" />
                 CatHouse
             </a>
         </div>

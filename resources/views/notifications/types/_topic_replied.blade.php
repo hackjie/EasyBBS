@@ -6,7 +6,7 @@
     </div>
 
     <div class="infos">
-        <div class="media-heading">
+        <div class="media-heading notification-list">
             <a href="{{ route('users.show', $notification->data['user_id']) }}">{{ $notification->data['user_name'] }}</a>
 
             {{-- 通知分为话题被评论；话题评论中被提及 --}}

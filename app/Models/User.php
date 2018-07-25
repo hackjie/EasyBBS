@@ -136,6 +136,7 @@ class User extends Authenticatable
         return $this->followings->contains($user_id);
     }
 
+    // 所关注的人和自己的状态：关注、话题、评论
     public function feed()
     {
         $user_ids = Auth::user()->followings->pluck('id')->toArray();

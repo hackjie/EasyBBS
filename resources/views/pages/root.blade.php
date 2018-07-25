@@ -28,9 +28,9 @@
     </div>
 
     <div class="col-lg-3 col-md-3 sidebar">
-        <div class="panel-body">
-            @include('topics._sidebar')
-        </div>
+            <div class="panel-body" style="padding-top:0px">
+                @include('topics._sidebar')
+            </div>
     </div>
 </div>
 
