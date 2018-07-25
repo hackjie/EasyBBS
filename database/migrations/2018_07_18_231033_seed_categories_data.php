@@ -16,19 +16,19 @@ class SeedCategoriesData extends Migration
         $categories = [
             [
                 'name'        => '分享',
-                'description' => '分享创造，分享发现',
+                'description' => '多一份分享，多一点对猫咪的了解',
             ],
             [
                 'name'        => '教程',
-                'description' => '开发技巧、推荐扩展包等',
+                'description' => '听说每一个合格的铲屎官，都会写几份合格的教程',
             ],
             [
                 'name'        => '问答',
-                'description' => '请保持友善，互帮互助',
+                'description' => '请保持友善，互帮互助，让猫咪健康陪伴左右',
             ],
             [
                 'name'        => '公告',
-                'description' => '站点公告',
+                'description' => 'CatHouse 站点公共，发布重要公告',
             ],
         ];
 

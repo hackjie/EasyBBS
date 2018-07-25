@@ -42,7 +42,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <span>
-                    <h1 class="panel-title pull-left" style="font-size:30px;">{{ $user->name }} <small>{{ $user->email }}</small></h1>
+                    <h2 class="panel-title pull-left" style="font-size:30px;">{{ $user->name }} <small>{{ $user->email }}</small></h2>
                 </span>
             </div>
         </div>
