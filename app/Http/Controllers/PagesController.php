@@ -3,22 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Link;
+
+use Auth;
 
 class PagesController extends Controller
 {
-    public function root()
+    public function root(Request $request, User $user, Link $link)
     {
-        return view('pages.root');
+        // 活跃用户列表
+        $active_users = $user->getActiveUsers();
+        // 资源链接
+        $links = $link->getAllCached();
+
+        $feed_items = [];
+        if (Auth::check()) {
+            $feed_items = Auth::user()->feed()->paginate(20);
+        }
+
+        return view('pages.root', compact('active_users', 'links', 'feed_items'));
     }
-
-    // public function index(Request $request, Topic $topic, User $user, Link $link)
-    // {
-    //     $topics = $topic->withOrder($request->order)->paginate(20);
-    //     $active_users = $user->getActiveUsers();
-    //     $links = $link->getAllCached();
-
-    //     return view('topics.index', compact('topics', 'active_users', 'links'));
-    // }
 
     public function permissionDenied()
     {

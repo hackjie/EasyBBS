@@ -136,12 +136,14 @@ class User extends Authenticatable
         return $this->followings->contains($user_id);
     }
 
-    // public function feed()
-    // {
-    //     $user_ids = Auth::user()->followings->pluck('id')->toArray();
-    //     array_push($user_ids, Auth::user()->id);
-    //     return 
-    // }
+    public function feed()
+    {
+        $user_ids = Auth::user()->followings->pluck('id')->toArray();
+        array_push($user_ids, Auth::user()->id);
+        return Topic::whereIn('user_id', $user_ids)
+                                ->with('user')
+                                ->orderBy('created_at', 'desc');
+    }
     // -----
 
 

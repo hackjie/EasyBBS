@@ -8436,6 +8436,38 @@ body {
   margin-bottom: 100px;
 }
 
+/* home */
+
+.home-feed-group {
+  background-color: #fff;
+}
+
+.home-feed-group .nav-tabs {
+  margin-bottom: 20px;
+}
+
+.home-feed-group .nav-tabs > li.active > a {
+  background-color: #fff;
+}
+
+.home-feed-group .list-group .list-group-item {
+  border: none;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #efefef;
+}
+
+.home-feed-group .list-group .list-group-item a {
+  color: #444444;
+}
+
+.home-feed-group .list-group .list-group-item .meta {
+  color: #b3b3b3;
+}
+
+.home-feed-group .pagination {
+  margin: 12px 0;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

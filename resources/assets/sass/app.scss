@@ -81,6 +81,33 @@ body {
     margin-bottom: 100px;
 }
 
+/* home */
+.home-feed-group {
+    background-color: #fff;
+
+    .nav-tabs {
+        margin-bottom: 20px;
+
+        >li.active > a {
+            background-color: #fff;
+        }
+    }
+
+    .list-group {
+        .list-group-item {
+            border: none;
+            margin-bottom: 0px;
+            border-bottom: 1px solid #efefef;
+            a {
+                color: #444444;
+            }
+            .meta {
+                color: #b3b3b3;
+            }
+        }
+    }
+}
+
 .footer {
     position: absolute;
     bottom: 0;
